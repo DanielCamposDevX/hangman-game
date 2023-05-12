@@ -30,11 +30,13 @@
     text-align: center;
     border: none;
 }
-.word{
+
+.word {
     position: absolute;
     bottom: 10px;
     right: 400px;
 }
+
 .word h1 {
     color: black;
     font-family: 'Noto Sans';
@@ -45,6 +47,40 @@
     display: flex;
     align-items: center;
     text-align: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.letras {
+    width: 684px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.letras button {
+    width: 40px;
+    height: 40px;
+    background-color: #E1ECF4;
+    color: #7AA7C7;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: 1px solid #7AA7C7;
+    margin-right: 12px;
+    margin-top: 12px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
