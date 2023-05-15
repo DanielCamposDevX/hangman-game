@@ -11,7 +11,7 @@ export default function App() {
   const [arrayDeLetras, setArrayDeLetras] = react.useState();
   const [palavraescondida, setPalavraescondida] = react.useState();
   const [erros,setErros] = react.useState(0);
-  const [cor,setCor] = react.useState('');
+  const [cor,setCor] = react.useState('Preto');
 
 
   function alteraBotaoLetras(array) {

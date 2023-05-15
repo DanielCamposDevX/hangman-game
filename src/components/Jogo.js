@@ -55,6 +55,7 @@ export default function jogo(props) {
   function sortandrender() {
     props.setSelecionadas([]);
     props.setErros(0);
+    props.setCor('Preto');
     const palavraAleatoria = palavras[Math.floor(Math.random() * palavras.length)];
     let arrayDeLetras = palavraAleatoria.split('');
     setTamanho(arrayDeLetras.length);
