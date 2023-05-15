@@ -1,10 +1,17 @@
-export default function letras() {
+import react from 'react';
+
+export default function letras(props) {
   const data = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-  let selecionadas = [];
-  function seleciona(l) {
-    if (selecionadas.length < 3 && !selecionadas.includes(l)) {
-      selecionadas.push(l);
+
+  const [selecionadas, setSelecionadas] = react.useState([]);
+  
+
+  function seleciona(letra) {
+    if (selecionadas.length < 3 && !selecionadas.includes(letra)) {
+      setSelecionadas([...selecionadas, letra]);
       console.log(selecionadas);
+
+
     }
     else { }
   }
@@ -13,10 +20,11 @@ export default function letras() {
       {data.map((letra) =>
         <button
           onClick={() => seleciona(letra)}
-          disabled={selecionadas.includes(letra)}
+          disabled={!props.botaoClicado ||selecionadas.includes(letra)}
         >
           {letra.toUpperCase()}
         </button>)}
     </div>
   )
+
 }

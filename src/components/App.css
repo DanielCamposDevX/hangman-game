@@ -83,6 +83,19 @@
     justify-content: center;
 }
 
+.letras button:hover{
+    cursor: pointer;
+}
+.letras button:disabled {
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    background-color: #9FAAB5;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    cursor: not-allowed;
+}
+
 
 .escondido {
     display: none;
