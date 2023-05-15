@@ -4,35 +4,38 @@ import palavras from "./palavras";
 export default function jogo(props) {
 
     const [tamanho, setTamanho] = react.useState();
-
+    const [array, setArray] = react.useState([]);
+    const [palavra, setPalavra] = react.useState();
+  
     function criarUnderline(n) {
-        let underline = "";
-        for (let i = 0; i < n; i++) {
-            underline += "_ ";
-        }
-        return underline;
+      let underline = "";
+      for (let i = 0; i < n; i++) {
+        underline += "_ ";
+      }
+      setPalavra(underline);
     }
-
+  
     function sortandrender() {
-        const palavraAleatoria = palavras[Math.floor(Math.random() * palavras.length)];
-        let arrayDeLetras = palavraAleatoria.split('');
-        let n = arrayDeLetras.length;
-        setTamanho(n);
-        console.log(arrayDeLetras);
+      const palavraAleatoria = palavras[Math.floor(Math.random() * palavras.length)];
+      let arrayDeLetras = palavraAleatoria.split('');
+      setTamanho(arrayDeLetras.length);
+      setArray(arrayDeLetras);
+      props.alteraBotaoLetras(arrayDeLetras);
+      console.log(arrayDeLetras);
+      criarUnderline(arrayDeLetras.length);
     }
-
-
-
+  
     return (
-        <div class="upper">
-            <div class="forca0">
-                <img src={forca0} />
-            </div>
-            <div class="restartgame">
-                <button onClick={() => { props.alteraBotaoLetras(); sortandrender(); }}>Escolher Palavra</button>
-            </div>
-            <div class="word">
-                <h1>{criarUnderline(tamanho)}</h1>
-            </div>
-        </div>);
-}
+      <div className="upper">
+        <div className="forca0">
+          <img src={forca0} alt="Forca" />
+        </div>
+        <div className="restartgame">
+          <button onClick={() => sortandrender()}>Escolher Palavra</button>
+        </div>
+        <div className="word">
+          <h1>{palavra}</h1>
+        </div>
+      </div>
+    );
+  }
