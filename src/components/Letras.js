@@ -29,6 +29,7 @@ export default function letras(props) {
       if (comparaArrays(palavra, escondida)) {
         console.log('Você ganhou!')
         props.setCor('Verde')
+        props.setSelecionadas(props.data);
       }
     }
     else {
