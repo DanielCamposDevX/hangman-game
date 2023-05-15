@@ -38,7 +38,6 @@
 }
 
 .word h1 {
-    color: black;
     font-family: 'Noto Sans';
     font-style: normal;
     font-weight: 700;
@@ -99,4 +98,13 @@
 
 .escondido {
     display: none;
+}
+
+
+.Verde{
+    color:green;
+}
+
+.Vermelho{
+    color:red;
 }
