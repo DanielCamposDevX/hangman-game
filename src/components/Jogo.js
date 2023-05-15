@@ -57,6 +57,7 @@ export default function jogo(props) {
     props.setErros(0);
     props.setCor('Preto');
     const palavraAleatoria = palavras[Math.floor(Math.random() * palavras.length)];
+    palavraAleatoria = palavraAleatoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     let arrayDeLetras = palavraAleatoria.split('');
     setTamanho(arrayDeLetras.length);
     setArray(arrayDeLetras);
